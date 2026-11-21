@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173f2c" />
+  <meta name="description" content="Bharat Agrolink — shop agricultural essentials with confidence." />
+  <title>Bharat Agrolink | Agriculture Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="announcement">
+    <span class="announcement-dot"></span>
+    A better way to source your farming essentials
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Bharat Agrolink home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" role="img"><path d="M20 34V17M20 24C11 24 7 18 7 9c9 0 15 4 13 15ZM20 19C20 10 26 5 35 5c0 10-5 16-15 17" /><path d="M12 33h16" /></svg>
+      </span>
+      <span class="brand-copy"><strong>Bharat<span>Agrolink</span></strong><small>GROW WITH CONFIDENCE</small></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#marketplace">Marketplace</a>
+      <a class="nav-link" href="#why-us">Why Agrolink</a>
+      <a class="nav-link" href="admin.html">Admin</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button cart-trigger" id="openCartBtn" aria-label="Open shopping cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6" /><circle cx="10" cy="19" r="1.4"/><circle cx="18" cy="19" r="1.4"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> YOUR FARM. YOUR MARKETPLACE.</div>
+        <h1>Everything your farm needs,<br><em>all in one place.</em></h1>
+        <p>Discover quality seeds and agricultural essentials from a marketplace built around the people who grow our future.</p>
+        <a class="primary-button hero-button" href="#marketplace">Explore products <span aria-hidden="true">↗</span></a>
+        <div class="hero-proof">
+          <div class="proof-icon">✳</div>
+          <div><strong>Simple. Transparent. Reliable.</strong><small>A smarter way to shop for your farm.</small></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Green agricultural field">
+        <div class="hero-image"></div>
+        <div class="floating-note">
+          <span class="note-icon">✦</span>
+          <div><strong>Grow more, worry less.</strong><small>Your farm essentials, simplified.</small></div>
+        </div>
+        <div class="hero-stamp">ROOTED IN<br><b>BHARAT</b></div>
+      </div>
+      <div class="hero-bottom-line"><span>01 / MARKETPLACE</span><span>MADE FOR THE PEOPLE WHO GROW</span></div>
+    </section>
+
+    <section class="benefit-strip" id="why-us">
+      <div class="benefit"><span class="benefit-symbol">✳</span><div><strong>Farm essentials</strong><small>Products for everyday needs</small></div></div>
+      <div class="benefit"><span class="benefit-symbol">⌁</span><div><strong>Clear pricing</strong><small>Know what you pay</small></div></div>
+      <div class="benefit"><span class="benefit-symbol">✓</span><div><strong>Stock visibility</strong><small>Shop what's available</small></div></div>
+      <div class="benefit"><span class="benefit-symbol">↗</span><div><strong>Easy ordering</strong><small>A simpler buying journey</small></div></div>
+    </section>
+
+    <section class="market-section" id="marketplace">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow dark-eyebrow"><span></span> THE AGROLINK COLLECTION</div>
+          <h2>Shop the <em>marketplace.</em></h2>
+          <p>Find the right essentials for your next growing season.</p>
+        </div>
+        <div class="result-count" id="resultCount">Loading products...</div>
+      </div>
+
+      <div class="market-toolbar">
+        <div class="category-tabs" id="categoryTabs" role="group" aria-label="Filter by category">
+          <button class="category-tab active" data-category="all">All products</button>
+        </div>
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+          <input type="search" id="searchInput" placeholder="Search products..." autocomplete="off" />
+        </label>
+      </div>
+
+      <div class="status-banner hidden" id="apiStatus" role="status"></div>
+      <div class="product-grid" id="productGrid" aria-live="polite">
+        <div class="loading-card"><span class="loader"></span><p>Gathering your farm essentials...</p></div>
+      </div>
+    </section>
+
+    <section class="bottom-cta">
+      <div class="cta-leaf">✳</div>
+      <div><span>GROWING STARTS HERE</span><h2>Good choices today.<br><em>Better harvests tomorrow.</em></h2></div>
+      <a href="#marketplace" class="secondary-button">Browse products <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#">
+      <span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 34V17M20 24C11 24 7 18 7 9c9 0 15 4 13 15ZM20 19C20 10 26 5 35 5c0 10-5 16-15 17" /><path d="M12 33h16" /></svg></span>
+      <span class="brand-copy"><strong>Bharat<span>Agrolink</span></strong><small>GROW WITH CONFIDENCE</small></span>
+    </a>
+    <p>Connecting farms to what helps them grow.</p>
+    <span class="footer-copy">© <span id="year"></span> Bharat Agrolink. Built for growers.</span>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header">
+      <div><span class="eyebrow dark-eyebrow">YOUR SELECTION</span><h2>Your cart <span id="drawerItemCount">(0)</span></h2></div>
+      <button class="close-button" id="closeCartBtn" aria-label="Close cart">×</button>
+    </div>
+    <div class="drawer-customer">
+      <span class="customer-avatar">G</span>
+      <div><small>Shopping as</small><strong id="customerLabel">Guest customer</strong></div>
+      <button id="changeCustomerBtn" class="text-button">Change</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart"><div class="empty-cart-icon">🧺</div><h3>Your cart is waiting</h3><p>Add a few essentials to get started.</p><button class="text-button" id="continueShoppingBtn">Explore products ↗</button></div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-calculations">
+        <div><span>Subtotal</span><strong id="cartSubtotal">₹0.00</strong></div>
+        <div><span>GST <small>(18%)</small></span><strong id="cartGst">₹0.00</strong></div>
+        <div class="grand-total"><span>Order total</span><strong id="cartTotal">₹0.00</strong></div>
+      </div>
+      <p class="tax-note">GST is calculated at the simplified 18% assessment rate.</p>
+      <button class="checkout-button" id="checkoutBtn" disabled>Place order <span>→</span></button>
+      <button class="clear-cart-button" id="clearCartBtn" disabled>Clear cart</button>
+    </div>
+  </aside>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+  <dialog class="customer-dialog" id="customerDialog">
+    <form method="dialog" id="customerForm">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <span class="eyebrow dark-eyebrow">PERSONALIZE YOUR CART</span>
+      <h2>Welcome to <em>Agrolink.</em></h2>
+      <p>Enter a customer ID to keep your cart associated with you. This demo uses an ID only; login is not enabled.</p>
+      <label for="customerIdInput">Customer ID</label>
+      <input id="customerIdInput" name="customer_id" maxlength="100" required placeholder="e.g. customer_001" />
+      <button class="checkout-button" id="saveCustomerBtn" value="save">Continue <span>→</span></button>
+    </form>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

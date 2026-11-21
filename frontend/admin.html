@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173f2c" />
+  <title>Admin | Bharat Agrolink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">✳</span><span><strong>Bharat Agrolink</strong><small>ADMIN CONSOLE</small></span></a>
+    <nav><a href="index.html">View storefront ↗</a><span class="admin-chip">ADMIN · NO LOGIN</span></nav>
+  </header>
+  <main class="shell">
+    <section class="page-intro">
+      <div><p class="eyebrow">MARKETPLACE MANAGEMENT</p><h1>Admin <em>overview.</em></h1><p class="sub">Manage your product catalogue and keep track of customer orders.</p></div>
+      <button class="button secondary" id="refreshAll">↻ Refresh data</button>
+    </section>
+    <div class="warning"><strong>Demo access:</strong> This admin panel has no login. Anyone who can access it can add products and view orders. Keep it local/private until authentication is implemented.</div>
+    <section class="stats" aria-label="Marketplace summary">
+      <article class="stat-card"><span>Total products</span><strong id="statProducts">—</strong><small>In the catalogue</small></article>
+      <article class="stat-card"><span>Total orders</span><strong id="statOrders">—</strong><small>Orders received</small></article>
+      <article class="stat-card"><span>Order value</span><strong id="statRevenue">—</strong><small>Sum of placed order totals</small></article>
+    </section>
+    <section class="content-grid">
+      <section class="panel form-panel">
+        <div class="panel-heading"><div><p class="eyebrow">CATALOGUE MANAGEMENT</p><h2 id="formHeading">Add a <em>product.</em></h2></div><span class="step">01</span></div>
+        <form id="productForm">
+          <label>Product name <input name="name" required minlength="2" maxlength="120" placeholder="e.g. Premium Rice Seeds"></label>
+          <div class="two-col">
+            <label>Category <input name="category" required minlength="2" maxlength="60" placeholder="e.g. Seeds"></label>
+            <label>Price (₹) <input name="price" type="number" min="0.01" step="0.01" required placeholder="600"></label>
+          </div>
+          <div class="two-col">
+            <label>Available stock <input name="stock" type="number" min="0" step="1" required placeholder="25"></label>
+            <label>Image URL <input name="image" type="url" placeholder="https://example.com/product.jpg"></label>
+          </div>
+          <label>Description <textarea name="description" rows="3" maxlength="1000" placeholder="Short product details..."></textarea></label>
+          <div class="form-actions"><button class="button primary" type="submit" id="saveProduct">＋ Add product</button><button class="button secondary cancel-edit" type="button" id="cancelEdit" hidden>Cancel edit</button></div>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </section>
+      <section class="panel catalogue-panel">
+        <div class="panel-heading"><div><p class="eyebrow">LIVE INVENTORY</p><h2>Product <em>catalogue.</em></h2></div><span class="step">02</span></div>
+        <div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead><tbody id="productRows"><tr><td colspan="5" class="empty">Loading products…</td></tr></tbody></table></div>
+      </section>
+    </section>
+    <section class="panel orders-panel">
+      <div class="panel-heading"><div><p class="eyebrow">CUSTOMER ACTIVITY</p><h2>Recent <em>orders.</em></h2><p class="panel-sub">Orders are sorted newest first.</p></div><span class="step">03</span></div>
+      <div id="ordersList" class="orders-list"><div class="empty-block">Loading orders…</div></div>
+    </section>
+    <footer>BHARAT AGROLINK <span>·</span> MINI AGRICULTURE MARKETPLACE</footer>
+  </main>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
